@@ -1,6 +1,6 @@
-import React from "react";
+import type React from "react";
 import { Star } from "lucide-react";
-import { CoffeeItem } from "../types/coffee";
+import type { CoffeeItem } from "../types/coffee";
 
 interface CoffeeContentSectionProps {
   currentItem: CoffeeItem;
@@ -29,14 +29,23 @@ export const CoffeeContentSection: React.FC<CoffeeContentSectionProps> = ({
           <h1 className="text-6xl font-bold text-gray-800 mb-8 leading-tight transition-smooth">
             {currentItem.name}
           </h1>
+
           {/* Category */}
           <div className="inline-block px-3 py-1 bg-gray-200 rounded-full text-sm text-gray-600 mb-6">
-            {currentItem.category}
+            {currentItem.category === "cafes"
+              ? "Especial"
+              : currentItem.category === "salgados"
+              ? "Salgado"
+              : currentItem.category === "doces"
+              ? "Doce"
+              : "Biscoito"}
           </div>
+
           {/* Description */}
           <p className="text-gray-600 text-lg leading-relaxed mb-6 transition-smooth">
             {currentItem.description}
           </p>
+
           {/* Rating */}
           <div className="flex items-center gap-2 mb-6">
             <div className="flex gap-1">
@@ -55,10 +64,12 @@ export const CoffeeContentSection: React.FC<CoffeeContentSectionProps> = ({
               ({currentItem.rating})
             </span>
           </div>
+
           {/* Price */}
           <div className="text-3xl font-bold text-gray-800 mb-6 transition-smooth">
             {currentItem.price}
           </div>
+
           {/* Order Button */}
           <button
             className={`inline-flex items-center px-8 py-4 rounded-xl text-white font-semibold text-lg transition-smooth hover:scale-105 hover:shadow-lg mb-8 ${currentItem.accent}`}

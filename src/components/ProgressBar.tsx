@@ -1,5 +1,5 @@
-import React from "react";
-import { CoffeeItem } from "../types/coffee";
+import type React from "react";
+import type { CoffeeItem } from "../types/coffee";
 
 interface ProgressBarProps {
   currentIndex: number;

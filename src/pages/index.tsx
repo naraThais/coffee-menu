@@ -1,5 +1,4 @@
-import React from "react";
-import { CoffeeMenu } from "../components/CoffeeMenu";
+import HeroSection from "../components/HeroSection";
 import Head from "next/head";
 
 export default function Home() {
@@ -15,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <CoffeeMenu />
+        <HeroSection />
       </main>
     </>
   );

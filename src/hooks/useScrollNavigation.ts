@@ -1,5 +1,7 @@
+"use client";
+
 import { useState, useEffect } from "react";
-import { ScrollNavigationHook } from "../types/coffee";
+import type { ScrollNavigationHook } from "../types/coffee";
 
 export const useScrollNavigation = (
   totalItems: number
@@ -7,6 +9,11 @@ export const useScrollNavigation = (
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
   const [lastScrollTime, setLastScrollTime] = useState(0);
+
+  // Reset index when totalItems changes (category change)
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [totalItems]);
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
