@@ -18,7 +18,7 @@ export const HeroSection: React.FC = () => {
         <div className="mb-6">
           <div className="flex flex-col items-center justify-center text-white">
             <div className="text-2xl font-light mb-2">EST.</div>
-            <Coffee className="w-24 h-24 mb-4" />
+            <Coffee className="w-24 h-24 mb-4 text-[#4B2E1E]" />
             <div className="text-2xl font-light">1949</div>
             <div className="text-4xl font-semibold mt-4">COFFEE</div>
             <div className="text-xl font-light">Premium Coffee</div>
@@ -26,7 +26,7 @@ export const HeroSection: React.FC = () => {
         </div>
 
         {/* Horário */}
-        <div className="flex justify-center items-center mt-8 gap-48 text-[#4B2E1E] font-semibold text-sm">
+        <div className="flex justify-center items-center mt-8 gap-48 text-white font-semibold text-sm">
           <div className="text-center">
             <div>TUESDAY TO SUNDAY</div>
           </div>
@@ -37,7 +37,7 @@ export const HeroSection: React.FC = () => {
         </div>
 
         {/* Descrição */}
-        <p className="text-[#6b5d53] text-lg text-center max-w-2xl mb-16 leading-relaxed font-light">
+        <p className="text-white text-lg text-center max-w-2xl mb-16 leading-relaxed font-light">
           Experience the joy of exceptional coffee in our cozy space, where
           <br />
           every cup is crafted with passion and warmth
@@ -46,7 +46,7 @@ export const HeroSection: React.FC = () => {
         {/* Botão CTA */}
         <button
           onClick={() => router.push("/menu")}
-          className="px-12 py-4 bg-amber-200 text-gray-900 font-semibold text-sm tracking-widest uppercase hover:bg-amber-300 transition-all duration-300 hover:scale-105"
+          className="px-12 py-4 bg-amber-200 text-gray-900 font-semibold text-sm tracking-widest uppercase hover:bg-amber-300 transition-all duration-300 hover:scale-105 rounded-2xl shadow-lg flex items-center justify-center gap-2"
         >
           Our Menu
         </button>
