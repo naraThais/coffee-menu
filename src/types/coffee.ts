@@ -4,7 +4,6 @@ export interface CoffeeItem {
   description: string;
   price: string;
   imageUrl: string;
-  accent: string;
   rating: number;
   category: string;
 }

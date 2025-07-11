@@ -1,56 +1,67 @@
-"use client";
+import type React from "react";
+import type { CoffeeItem } from "../types/coffee";
 
-import { Coffee } from "lucide-react";
-import React from "react";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
+interface CoffeeContentSectionProps {
+  currentItem: CoffeeItem;
+  isScrolling: boolean;
+  totalItems: number;
+  currentIndex: number;
+  onNavigate: (index: number) => void;
+}
 
-export const HeroSection: React.FC = () => {
-  const router = useRouter();
-
+export const CoffeeContentSection: React.FC<CoffeeContentSectionProps> = ({
+  currentItem,
+  isScrolling,
+}) => {
   return (
-    <div className="relative min-h-screen flex overflow-hidden bg-[#d8a673]">
-      {/* Imagem à esquerda */}
-      <div className="relative w-1/2 min-h-screen shadow-lg">
-        <Image
-          src="/bg2.jpg"
-          alt="Coffee Background"
-          fill
-          quality={100}
-          priority
-          className="object-cover w-full h-full"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/10" />
-      </div>
-
-      {/* Conteúdo à direita */}
-      <div className="w-1/2 flex flex-col justify-center px-16 py-20 bg-[#fef6ef] relative z-10">
-        <div className="max-w-lg space-y-6">
-          <div className="flex items-center gap-3 text-[#8b5e3c]">
-            <Coffee size={32} />
-            <span className="uppercase tracking-wider font-semibold text-sm">
-              Zenbrew Coffee
-            </span>
-          </div>
-
-          <h1 className="text-5xl md:text-6xl font-extrabold text-coffee-highlight leading-tight">
-            Premium <span className="text-coffee-highlight">Blend Coffee</span>
+    <div
+      className="w-1/2 min-h-screen relative transition-smooth"
+      style={{ backgroundColor: "#fef6ef" }}
+    >
+      {/* Main Content */}
+      <div className="absolute inset-0 flex items-center justify-center p-12">
+        <div
+          className={`max-w-md w-full transition-smooth ${
+            isScrolling
+              ? "translate-x-8 opacity-70"
+              : "translate-x-0 opacity-100"
+          }`}
+        >
+          {/* Coffee Name */}
+          <h1 className="text-6xl font-bold text-[#3d2b1f] mb-8 leading-tight transition-smooth">
+            {currentItem.name}
           </h1>
 
-          <p className="text-[#5c3b28] text-lg leading-relaxed">
-            Sabor encorpado, aroma irresistível e qualidade artesanal.
+          {/* Category */}
+          <div className="inline-block px-3 py-1 bg-[#d8a673] rounded-full text-sm text-[#3d2b1f] mb-6">
+            {currentItem.category === "cafes"
+              ? "Especial"
+              : currentItem.category === "salgados"
+              ? "Salgado"
+              : currentItem.category === "doces"
+              ? "Doce"
+              : "Biscoito"}
+          </div>
+
+          {/* Description */}
+          <p className="text-[#5c3b28] text-lg leading-relaxed mb-6 transition-smooth">
+            {currentItem.description}
           </p>
 
+          {/* Price */}
+          <div className="text-3xl font-bold text-[#3d2b1f] mb-6 transition-smooth">
+            {currentItem.price}
+          </div>
+
+          {/* Order Button */}
           <button
-            onClick={() => router.push("/menu")}
-            className="px-7 py-3 bg-[#8b5e3c] hover:bg-[#5c3b28] transition-all duration-300 ease-in-out rounded-full text-white font-semibold shadow-lg hover:shadow-xl"
+            onClick={() => console.log("Order Now")}
+            className="px-7 py-3 bg-[#8b5e3c] hover:bg-[#5c3b28] rounded-full text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out mb-8"
           >
-            Ver Menu
+            PEDIR AGORA
           </button>
         </div>
       </div>
     </div>
   );
 };
-
-export default HeroSection;
