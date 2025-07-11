@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { useScrollNavigation } from "../hooks/useScrollNavigation";
 import { CoffeeImageSection } from "./CoffeeImageSection";
 import { CoffeeContentSection } from "./CoffeeContentSection";
-import { ProgressBar } from "./ProgressBar";
 import { CategoryMenu } from "./CategoryMenu";
 import { coffeeItems, categories } from "../data/coffeeData";
 
@@ -48,12 +47,6 @@ const CoffeeMenu: React.FC = () => {
         totalItems={filteredItems.length}
         currentIndex={currentIndex}
         onNavigate={setCurrentIndex}
-      />
-
-      <ProgressBar
-        currentIndex={currentIndex}
-        totalItems={filteredItems.length}
-        currentItem={currentItem}
       />
     </div>
   );
