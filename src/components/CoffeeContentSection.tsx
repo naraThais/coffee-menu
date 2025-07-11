@@ -26,12 +26,12 @@ export const CoffeeContentSection: React.FC<CoffeeContentSectionProps> = ({
           }`}
         >
           {/* Coffee Name */}
-          <h1 className="text-6xl font-bold text-gray-800 mb-8 leading-tight transition-smooth">
+          <h1 className="text-6xl font-bold text-[#3d2b1f] mb-8 leading-tight transition-smooth">
             {currentItem.name}
           </h1>
 
           {/* Category */}
-          <div className="inline-block px-3 py-1 bg-gray-200 rounded-full text-sm text-gray-600 mb-6">
+          <div className="inline-block px-3 py-1 bg-[#d8a673] rounded-full text-sm text-[#3d2b1f] mb-6">
             {currentItem.category === "cafes"
               ? "Especial"
               : currentItem.category === "salgados"
@@ -42,7 +42,7 @@ export const CoffeeContentSection: React.FC<CoffeeContentSectionProps> = ({
           </div>
 
           {/* Description */}
-          <p className="text-gray-600 text-lg leading-relaxed mb-6 transition-smooth">
+          <p className="text-[#5c3b28] text-lg leading-relaxed mb-6 transition-smooth">
             {currentItem.description}
           </p>
 
@@ -54,25 +54,26 @@ export const CoffeeContentSection: React.FC<CoffeeContentSectionProps> = ({
                   key={i}
                   className={`w-4 h-4 ${
                     i < Math.floor(currentItem.rating)
-                      ? "text-yellow-400 fill-current"
-                      : "text-gray-300"
+                      ? "text-[#8b5e3c] fill-current"
+                      : "text-[#d3bba5]"
                   }`}
                 />
               ))}
             </div>
-            <span className="text-sm text-gray-500">
+            <span className="text-sm text-[#5c3b28]">
               ({currentItem.rating})
             </span>
           </div>
 
           {/* Price */}
-          <div className="text-3xl font-bold text-gray-800 mb-6 transition-smooth">
+          <div className="text-3xl font-bold text-[#3d2b1f] mb-6 transition-smooth">
             {currentItem.price}
           </div>
 
           {/* Order Button */}
           <button
-            className={`inline-flex items-center px-8 py-4 rounded-xl text-white font-semibold text-lg transition-smooth hover:scale-105 hover:shadow-lg mb-8 ${currentItem.accent}`}
+            onClick={() => console.log("Order Now")}
+            className="px-7 py-3 bg-[#8b5e3c] hover:bg-[#5c3b28] rounded-full text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out mb-8"
           >
             PEDIR AGORA
           </button>

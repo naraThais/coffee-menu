@@ -3,7 +3,7 @@
 import type React from "react";
 import { Star, Menu } from "lucide-react";
 import type { Category } from "../types/coffee";
-
+import { CakeSlice, Coffee, Cookie, Sandwich, HandPlatter } from "lucide-react";
 interface CategoryMenuProps {
   categories: Category[];
   activeCategory: string;
@@ -50,17 +50,17 @@ export const CategoryMenu: React.FC<CategoryMenuProps> = ({
 };
 
 // Helper function to get category icons
-function getCategoryIcon(categoryId: string): string {
+function getCategoryIcon(categoryId: string): JSX.Element | null {
   switch (categoryId) {
     case "cafes":
-      return "☕";
+      return <Coffee />;
     case "salgados":
-      return "🥪";
+      return <Sandwich />;
     case "doces":
-      return "🧁";
+      return <CakeSlice />;
     case "biscoitos":
-      return "🍪";
+      return <Cookie />;
     default:
-      return "☕";
+      return null;
   }
 }

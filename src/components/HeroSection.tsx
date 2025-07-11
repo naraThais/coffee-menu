@@ -33,8 +33,8 @@ export const HeroSection: React.FC = () => {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-extrabold text-[#3d2b1f] leading-tight">
-            Premium <span className="text-[#8b5e3c]">Blend Coffee</span>
+          <h1 className="text-5xl md:text-6xl font-extrabold text-coffee-highlight leading-tight">
+            Premium <span className="text-coffee-highlight">Blend Coffee</span>
           </h1>
 
           <p className="text-[#5c3b28] text-lg leading-relaxed">
