@@ -50,7 +50,7 @@ export const CategoryMenu: React.FC<CategoryMenuProps> = ({
 };
 
 // Helper function to get category icons
-function getCategoryIcon(categoryId: string): JSX.Element | null {
+function getCategoryIcon(categoryId: string): React.ReactElement | null {
   switch (categoryId) {
     case "cafes":
       return <Coffee />;
