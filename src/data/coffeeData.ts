@@ -15,8 +15,7 @@ export const coffeeItems: CoffeeItem[] = [
     description:
       "Café espresso cremoso com leite vaporizado e uma pitada de espuma de leite delicada para um sabor equilibrado e suave",
     price: "R$ 12,90",
-    imageUrl:
-      "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&h=800&fit=crop",
+   imageUrl: "/cafe/machiato.jpg",
     accent: "bg-[#9b6b49]",
     rating: 4.9,
     category: "cafes",
@@ -27,8 +26,7 @@ export const coffeeItems: CoffeeItem[] = [
     description:
       "Mistura perfeita de espresso forte com leite cremoso e espuma aveludada polvilhada com canela aromática",
     price: "R$ 14,90",
-    imageUrl:
-      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=800&h=800&fit=crop",
+    imageUrl: "/cafe/cappucino.jpg",
     accent: "bg-[#9b6b49]",
     rating: 4.8,
     category: "cafes",
@@ -39,8 +37,7 @@ export const coffeeItems: CoffeeItem[] = [
     description:
       "Espresso suave combinado com leite vaporizado sedoso e uma fina camada de espuma cremosa",
     price: "R$ 13,90",
-    imageUrl:
-      "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=800&h=800&fit=crop",
+   imageUrl: "/cafe/latte.jpg",
     accent: "bg-[#9b6b49]",
     rating: 4.7,
     category: "cafes",
@@ -51,8 +48,7 @@ export const coffeeItems: CoffeeItem[] = [
     description:
       "Espresso puro diluído com água quente, mantendo todo o sabor intenso e marcante do café",
     price: "R$ 9,90",
-    imageUrl:
-      "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=800&h=800&fit=crop",
+    imageUrl: "/cafe/americano.jpg",
     accent: "bg-[#9b6b49]",
     rating: 4.6,
     category: "cafes",
@@ -63,8 +59,7 @@ export const coffeeItems: CoffeeItem[] = [
     description:
       "Combinação irresistível de espresso, chocolate quente e leite cremoso coberto com chantilly",
     price: "R$ 16,90",
-    imageUrl:
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=800&fit=crop",
+   imageUrl: "/cafe/mocha.jpg",
     accent: "bg-[#9b6b49]",
     rating: 4.9,
     category: "cafes",

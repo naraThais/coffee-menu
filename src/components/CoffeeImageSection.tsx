@@ -11,7 +11,6 @@ interface CoffeeImageSectionProps {
 
 export const CoffeeImageSection: React.FC<CoffeeImageSectionProps> = ({
   currentItem,
-  isScrolling,
   onBack,
 }) => {
   return (
@@ -31,11 +30,7 @@ export const CoffeeImageSection: React.FC<CoffeeImageSectionProps> = ({
 
       {/* Imagem */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div
-          className={`w-full h-full relative transition-smooth ${
-            isScrolling ? "scale-95 opacity-70" : "scale-100 opacity-100"
-          }`}
-        >
+        <div className={"w-full h-full relative transition-smooth"}>
           <div className="absolute inset-0">
             <Image
               src={currentItem.imageUrl || "/placeholder.svg"}
