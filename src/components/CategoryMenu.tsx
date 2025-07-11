@@ -3,7 +3,7 @@
 import type React from "react";
 import { Star, Menu } from "lucide-react";
 import type { Category } from "../types/coffee";
-import { CakeSlice, Coffee, Cookie, Sandwich, HandPlatter } from "lucide-react";
+import { CakeSlice, Coffee, Cookie, Sandwich } from "lucide-react";
 interface CategoryMenuProps {
   categories: Category[];
   activeCategory: string;
