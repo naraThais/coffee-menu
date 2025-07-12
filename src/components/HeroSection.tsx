@@ -9,7 +9,7 @@ export const HeroSection: React.FC = () => {
   const router = useRouter();
 
   return (
-    <div className="relative min-h-screen flex overflow-hidden bg-[#d8a673]">
+    <div className="relative min-h-screen flex overflow-hidden">
       {/* Imagem à esquerda */}
       <div className="relative w-1/2 min-h-screen shadow-lg">
         <Image

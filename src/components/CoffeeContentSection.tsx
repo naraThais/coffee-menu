@@ -15,22 +15,20 @@ export const CoffeeContentSection: React.FC<CoffeeContentSectionProps> = ({
   isScrolling,
 }) => {
   return (
-    <div className={"w-1/2 min-h-screen relative transition-smooth"}>
-      {/* Main Content */}
+    <div className={"w-1/2 min-h-screen relative"}>
       <div className="absolute inset-0 flex items-center justify-center p-12">
         <div
-          className={`max-w-md w-full transition-smooth ${
+          className={`max-w-md w-full transition-opacity transition-transform duration-700 ease-out ${
             isScrolling
-              ? "translate-x-8 opacity-70"
-              : "translate-x-0 opacity-100"
+              ? "opacity-30 translate-y-8"
+              : "opacity-100 translate-y-0"
           }`}
         >
-          {/* Coffee Name */}
-          <h1 className="text-6xl font-bold text-[#3d2b1f] mb-8 leading-tight transition-smooth">
+          {/* Conteúdo permanece igual */}
+          <h1 className="text-6xl font-bold text-[#3d2b1f] mb-8 leading-tight">
             {currentItem.name}
           </h1>
 
-          {/* Category */}
           <div className="inline-block px-3 py-1 bg-[#d8a673] rounded-full text-sm text-[#3d2b1f] mb-6">
             {currentItem.category === "cafes"
               ? "Especial"
@@ -41,12 +39,10 @@ export const CoffeeContentSection: React.FC<CoffeeContentSectionProps> = ({
               : "Biscoito"}
           </div>
 
-          {/* Description */}
-          <p className="text-[#5c3b28] text-lg leading-relaxed mb-6 transition-smooth">
+          <p className="text-[#5c3b28] text-lg leading-relaxed mb-6">
             {currentItem.description}
           </p>
 
-          {/* Rating */}
           <div className="flex items-center gap-2 mb-6">
             <div className="flex gap-1">
               {[...Array(5)].map((_, i) => (
@@ -65,12 +61,10 @@ export const CoffeeContentSection: React.FC<CoffeeContentSectionProps> = ({
             </span>
           </div>
 
-          {/* Price */}
-          <div className="text-3xl font-bold text-[#3d2b1f] mb-6 transition-smooth">
+          <div className="text-3xl font-bold text-[#3d2b1f] mb-6">
             {currentItem.price}
           </div>
 
-          {/* Order Button */}
           <button
             onClick={() => console.log("Order Now")}
             className="px-7 py-3 bg-[#8b5e3c] hover:bg-[#5c3b28] rounded-full text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out mb-8"

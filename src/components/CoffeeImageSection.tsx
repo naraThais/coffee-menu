@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ChevronLeft, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import type { CoffeeItem } from "../types/coffee";
@@ -13,6 +13,13 @@ export const CoffeeImageSection: React.FC<CoffeeImageSectionProps> = ({
   currentItem,
   onBack,
 }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsLoaded(true), 60);
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <div className={"w-1/2 min-h-screen relative transition-smooth"}>
       {/* Botão Voltar */}
@@ -29,15 +36,22 @@ export const CoffeeImageSection: React.FC<CoffeeImageSectionProps> = ({
       </div>
 
       {/* Imagem */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className={"w-full h-full relative transition-smooth"}>
+      <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+        <div
+          className={`w-full h-full relative transition-transform transition-opacity duration-1500 ease-in-out ${
+            isLoaded
+              ? "translate-x-0 opacity-100"
+              : "-translate-x-full opacity-0"
+          }`}
+        >
           <div className="absolute inset-0">
             <Image
               src={currentItem.imageUrl || "/placeholder.svg"}
               alt={currentItem.name}
-              className="w-full h-full object-cover transition-smooth hover:scale-105"
+              className="w-full h-full object-cover"
               width={800}
               height={800}
+              priority
             />
             <div className="absolute inset-0 bg-black/20"></div>
           </div>
